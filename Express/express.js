@@ -18,6 +18,12 @@ app.get("/api/user", (req, res) => {
   return res.json(user);
 });
 
+app.get("/api/user/:id" ,(req , res)=>{
+  const Id = Number(req.params.id);
+  const userId = user.find((user)=> user.id ===Id)
+   return res.json(userId)
+})
+
 
 app.listen(8000, () => {
   console.log("Server started");
