@@ -1,13 +1,14 @@
-const fs = require("fs");
-const path = require("path");
+const file =  require("fs");
 
-// Define the file path relative to the current script's directory
-const filePath = path.join(__dirname, "text.txt");
+file.writeFile("./text.txt" , "hello world" ,  () => {})
 
-fs.writeFile(filePath, "hey there this is Chaitanya", (error) => {
-  if (error) {
-    console.error("Error writing to file:", error);
-  } else {
-    console.log("File 'text.txt' has been created successfully!");
-  }
-});
+file.readFile("./contact.js" ,  "utf-8" , (error ,  result) =>{
+    console.log(result)
+})
+
+
+file.mkdir("./Express"  , ()=>{})
+
+file.writeFile("./Express/express.js" , "" , (e)=>{
+console.log(e)
+})
